@@ -1,0 +1,41 @@
+.tile {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.image {
+  width: 10rem;
+  min-height: 10rem;
+  background-size: cover;
+  position: relative;
+}
+
+.image__price {
+  width: 50%;
+  min-height: 2.5rem;
+  background-color: burlywood;
+  position: absolute;
+  left: 25%;
+  top: -20px;
+  text-align: center;
+  line-height: 2.5rem;
+  overflow: hidden;
+}
+
+.text {
+  width: 73%;
+  min-height: 10rem;
+  text-align: start;
+  font-size: 1.1rem;
+}
+
+.text__heading {
+  font-size: larger;
+  margin-bottom: 0.5em;
+}
+
+.text p {
+  margin: 0;
+}

@@ -1,0 +1,66 @@
+.menu__item {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.200);
+  width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.item__overlay {
+  background-color: rgba(0, 0, 0, 0.300);
+  position: relative;
+  min-height: 25%;
+  top: 75%;
+  transition: all 0.4s;
+}
+
+.item__overlay:hover {
+  min-height: 100%;
+  top: 0;
+}
+
+.item__overlay button {
+  width: 15%;
+  min-height: 3em;
+  border-radius: 45%;
+  border: none;
+  position: absolute;
+}
+
+.plus {
+  --b: 4px;
+  width:25px;
+  aspect-ratio:1/1;
+  right: 2rem;
+  bottom: 1rem;
+  position: absolute;
+  border-radius: 50%;
+  border:10px solid #deb887;
+  background: conic-gradient(from 90deg at var(--b) var(--b),#deb887 90deg,#ffffff 0)
+    calc(100% + var(--b)/2) calc(100% + var(--b)/2) /
+    calc(50% + var(--b)) calc(50% + var(--b));
+  display:inline-block;
+}
+
+.plus:hover {
+  border:10px solid #ffffff;
+  background: conic-gradient(from 90deg at var(--b) var(--b),#ffffff 90deg,#deb887 0)
+    calc(100% + var(--b)/2) calc(100% + var(--b)/2) /
+    calc(50% + var(--b)) calc(50% + var(--b));
+  cursor: pointer;
+}
+
+.overlay__texts {
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 10px burlywood;
+  bottom: 30%;
+  left: 2.5rem;
+}
+
+.overlay__texts h3 {
+  margin: 0;
+  cursor: default;
+}

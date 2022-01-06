@@ -1,0 +1,37 @@
+.toast {
+  width: 700px;
+  min-height: 100px;
+  background-color: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.250);
+  border-radius: 5px;
+  position: absolute;
+  top: 99%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.toast__inner {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.pillar {
+  width: 5px;
+  height: 90px;
+  background-color: burlywood;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.icon {
+  width: 25%;
+  height: 50px;
+  color: burlywood;
+}
+
+.text {
+  flex: 1;
+}

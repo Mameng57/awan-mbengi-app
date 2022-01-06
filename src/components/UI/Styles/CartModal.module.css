@@ -1,0 +1,162 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.cart-modal {
+  width: 50%;
+  min-height: 80vh;
+  background-color: white;
+  z-index: 6;
+  border-radius: 10px;
+  overflow: auto;
+  user-select: none;
+}
+
+.container {
+  width: 90%;
+  min-height: 570px;
+  transform: translate(5%, 10%);
+}
+
+.items {
+  overflow: auto;
+  height: 500px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 4rem;
+  border-bottom: 1px solid burlywood;
+  text-align: center;
+}
+
+.header__column:first-child {
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 5px;
+}
+
+.header__column:nth-child(2) {
+  width: 15%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__column:nth-child(3) {
+  width: 10%;
+  overflow: hidden;
+}
+
+.total {
+  min-width: 15%;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid burlywood 1px;
+  padding: 0.7em;
+}
+
+.total h3::before {
+  content: "Rp. ";
+}
+
+.footer {
+  margin-top: 2em;
+  min-height: 7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  width: 20%;
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reservation {
+  min-height: 2.5rem;
+  border: solid 1px burlywood;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.reservation:hover {
+  color: burlywood;
+  cursor: pointer;
+}
+
+.checkout {
+  min-height: 2.5rem;
+  border: solid 1px burlywood;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  background-color: burlywood;
+  color: white;
+}
+
+.checkout:hover {
+  color: white;
+  text-shadow: 0px 0px 5px white;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.250);
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty h4 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: solid 2px burlywood;
+}
+
+.awan-mbengi {
+  width: 30%;
+  min-height: 250px;
+  background-image: url(../../../assets/images/Logo.png);
+  background-size: cover;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@media print {
+  .cart-modal {
+    overflow: visible;
+  }
+
+  .items {
+    overflow: visible;
+    height: auto;
+  }
+
+  .reservation, .checkout {
+    display: none;
+  }
+}

@@ -1,0 +1,61 @@
+.home {
+  width: 80%;
+  min-height: 200px;
+  margin: auto;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10em;
+}
+
+.intro__element {
+  width: 40%;
+  min-height: 30rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../assets/images/AwanMbengi_06.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: -30px 50px 0 7px rgba(170, 170, 170, 0.150);
+}
+
+.text {
+  font-size: 1.7rem;
+  text-align: justify;
+}
+
+.special {
+  margin-top: 10em;
+  text-align: center;
+  padding-bottom: 10em;
+}
+
+.special__heading {
+  font-size: 10rem;
+  font-family: 'Waterfall', cursive;
+  color: burlywood;
+}
+
+.special__menus {
+  display: flex;
+  background-image: url(../../../assets/images/Background_Menus.png);
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(50, 50, 50, 0.25);
+  padding-bottom: 20vh;
+}
+
+.special__footer {
+  margin-top: 7em;
+  font-size: 2rem;
+}
+
+.special__footer span {
+  font-family: 'Waterfall', cursive;
+  font-size: 3rem;
+}

@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  min-height: 4rem;
+  border-bottom: 1px solid burlywood;
+  text-align: center;
+}
+
+.header__column:first-child {
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 5px;
+}
+
+.header__column:nth-child(2) {
+  width: 15%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__column:nth-child(3) {
+  width: 10%;
+  overflow: hidden;
+}
+
+.image {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.description {
+  flex: 1;
+  margin-left: 1em;
+  font-size: larger;
+  text-align: start;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 50%;
+  height: 50%;
+  color: white;
+  background-color: burlywood;
+  border: solid 1px burlywood;
+}
+
+.button:hover {
+  background-color: white;
+  color: burlywood;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+}
+
+input:focus {
+  border: burlywood 1px solid;
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+.total {
+  margin-top: 2em;
+  width: 15%;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid burlywood 1px;
+  padding: 0.7em;
+}
+
+.total h3::before {
+  content: "Rp. ";
+}
+
+.delete {
+  color: burlywood;
+  width: 30px;
+  height: 30px;
+  border: burlywood solid 1px;
+}
+
+.delete:hover {
+  color: white;
+  border: burlywood solid 1px;
+  background-color: burlywood;
+}
+
+@media print {
+  .button, .delete {
+    display: none;
+  }
+}

@@ -1,0 +1,60 @@
+.menu {
+  width: 80%;
+  margin: auto;
+}
+
+.menu__heading {
+  width: 60%;
+  font-size: 1.7rem;
+  margin-top: 7em;
+}
+
+.menu__grid {
+  min-height: 632px;
+  margin-top: 5em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 2em;
+  column-gap: 2em;
+}
+
+.menu__navigation {
+  width: 15%;
+  min-height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  padding-bottom: 5em;
+}
+
+.navigation {
+  width: 40%;
+  min-height: 2rem;
+  border: solid burlywood 1px;
+  background-color: burlywood;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navigation:hover {
+  background-color: white;
+}
+
+.arrow {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: solid black;
+  border-left: 0;
+  border-top: 0;
+  margin: auto;
+}
+
+.right {
+  transform: rotate(310deg);
+}
+
+.left {
+  transform: rotate(130deg);
+}

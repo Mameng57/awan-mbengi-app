@@ -1,0 +1,11 @@
+.category-menu {
+  width: 100%;
+  margin-top: 5em;
+  font-size: 1.5rem;
+}
+
+.category-menu__items {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
