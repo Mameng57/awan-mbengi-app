@@ -32,11 +32,11 @@ const Home = (props) => {
       <div className={Styles.special}>
         <h1 className={Styles.special__heading}>Today's special</h1>
         <div className={Styles.special__menus}>
-          <div className={Styles.special__menus__item}> {
+          <div> {
             todaySpecials(props.specials.leftSide)
           }
           </div>
-          <div className={Styles.special__menus__item}> {
+          <div> {
             todaySpecials(props.specials.rightSide)
           }
           </div>
