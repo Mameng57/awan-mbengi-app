@@ -23,9 +23,9 @@ const CategoryMenu = (props) => {
   };
 
   const changeCategoryHandler = (category, id) => {
-    setActiveCategory({
-      [id]: true,
-    });
+    setActiveCategory(
+      { [id]: true }
+    );
     props.onClick(category);
   }
 
