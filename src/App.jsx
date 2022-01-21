@@ -7,7 +7,6 @@ import OrderPage from "./components/Pages/OrderPage";
 import NavBar from "./components/UI/NavBar";
 import Foods from "./components/Models/Foods";
 import CartModal from "./components/UI/CartModal";
-import Wrapper from "./components/Helpers/Wrapper";
 
 const App = () => {
 
@@ -34,7 +33,7 @@ const App = () => {
   ];
 
   return (
-    <Wrapper>
+    <React.Fragment>
       <AnimatePresence exitBeforeEnter> {
         modalOpen &&
         <CartModal
@@ -54,7 +53,7 @@ const App = () => {
         }
         </Routes>
       </AnimatePresence>
-    </Wrapper>
+    </React.Fragment>
   );
 }
 
