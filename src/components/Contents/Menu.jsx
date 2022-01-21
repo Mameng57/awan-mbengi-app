@@ -17,7 +17,6 @@ const Menu = ({menus, addCounter, addItem}) => {
       quantity: 1,
       total: menu.price,
     }
-
     setShowToast(true);
     setToastMenu(menu);
     addItem(addedMenu);
@@ -36,7 +35,6 @@ const Menu = ({menus, addCounter, addItem}) => {
         (item) => <MenuItem key={item.id} item={item} addToCart={addToCart} />
       )
     );
-
     setAnimateGrid((prevState) => !prevState);
   }
 
