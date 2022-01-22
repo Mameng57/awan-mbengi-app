@@ -3,30 +3,13 @@ import { motion } from "framer-motion";
 
 const Transition = (props) => {
 
-  const variants = {
-    initial: {
-      filter: "blur(2px)",
-      opacity: 0.7,
-    },
-  
-    in: {
-      filter: "blur(0)",
-      opacity: 1,
-    },
-
-    out: {
-      filter: "blur(2px)",
-      opacity: 0.9,
-    },
-  };
-
-  const onStart = () => {
-    window.scrollTo(0, 0);
-  };
-
   return (
-    <motion.div variants={variants} initial="initial" animate="in" exit="out" onAnimationStart={onStart}>
-      {props.children}
+    <motion.div
+      initial={{filter: "blur(2px)", opacity: 0.7}}
+      animate={{filter: "blur(0)", opacity: 1}}
+      exit={{filter: "blur(2px)", opacity: 0.9}}
+      onAnimationStart={() => window.scrollTo(0, 0)}>
+      { props.children }
     </motion.div>
   );
 }
