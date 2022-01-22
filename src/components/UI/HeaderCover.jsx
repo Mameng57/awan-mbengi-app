@@ -14,12 +14,10 @@ const HeaderCover = ({image}) => {
   };
 
   return (
-    <div>
-      <div className={Styles['cover-image']} style={{backgroundImage: imagePath()}}>
-        <div className={`${Styles.overlay} ${Styles.logo}`} />
-        <div className={`${Styles.overlay} ${Styles.text}`}>
-          <span>It's not talk about taste, but soul</span>
-        </div>
+    <div className={Styles['cover-image']} style={{backgroundImage: imagePath()}}>
+      <div className={`${Styles.overlay} ${Styles.logo}`} />
+      <div className={`${Styles.overlay} ${Styles.text}`}>
+        <span>It's not talk about taste, but soul</span>
       </div>
     </div>
   );
