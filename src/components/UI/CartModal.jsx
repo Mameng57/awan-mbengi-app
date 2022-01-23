@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 import { useReactToPrint } from "react-to-print";
 import Backdrop from "./Backdrop";
@@ -75,21 +76,27 @@ const CartModal = ({setModal, items, subCounter, deleteItem}) => {
   }
 
   return (
-    <Backdrop setModal={setModal}>
-      <motion.div
-        className={Styles['cart-modal']}
-        onClick={(event) => event.stopPropagation()}
-        initial={{y: "-100vh"}} animate={{y: 0}} exit={{y: "100vh"}}
-        transition={{type: "just", damping: 15}}>
-        <CartTable ref={componentRef}
-          cartItems={cartItems}
-          changeQtyHandler={changeQtyHandler}
-          deleteHandler={deleteHandler}
-          printHandler={printHandler}
-          totalPrice={totalPrice}
-        />
-      </motion.div>
-    </Backdrop>
+    <React.Fragment> {
+      ReactDOM.createPortal(
+        <Backdrop setModal={setModal}>
+          <motion.div
+            className={Styles['cart-modal']}
+            onClick={(event) => event.stopPropagation()}
+            initial={{y: "-100vh"}} animate={{y: 0}} exit={{y: "100vh"}}
+            transition={{type: "just", damping: 15}}>
+            <CartTable ref={componentRef}
+              cartItems={cartItems}
+              changeQtyHandler={changeQtyHandler}
+              deleteHandler={deleteHandler}
+              printHandler={printHandler}
+              totalPrice={totalPrice}
+            />
+          </motion.div>
+        </Backdrop>,
+        document.getElementById('cart-modal')
+      )
+    }
+    </React.Fragment>
   );
 }
 
