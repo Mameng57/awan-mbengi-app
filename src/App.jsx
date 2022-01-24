@@ -19,19 +19,21 @@ const App = () => {
   const subCartCounter = () => setCartCounter((prevState) => prevState -= 1);
 
   const addCartItem = (menu) => {
-    if (cartItems.length !== 0) {
-      console.log("NOT ZERO");
-      setCartItems(
-        (prevState) => {
-          const array = [...prevState.filter((item) => item.id !== menu.id)];
-  
-          return array;
+    setCartItems((prevState) => {
+      for (let index = 0; index < prevState.length; index++) {
+        if (prevState[index]['id'] === menu.id) {
+          setCartItems(
+            (items) => {
+              items[index]['quantity'] += 1;
+              return [...items];
+            }
+          );
+          return [menu, ...prevState.filter((value) => value.id !== menu.id)];
         }
-      );
-      return;
-    }
-    addCartCounter();
-    setCartItems((prevState) => [menu, ...prevState]);
+      }
+      addCartCounter();
+      return [menu, ...prevState];
+    });
   }
 
   const deleteCartItem = (id) => {
