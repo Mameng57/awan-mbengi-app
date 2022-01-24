@@ -19,6 +19,17 @@ const App = () => {
   const subCartCounter = () => setCartCounter((prevState) => prevState -= 1);
 
   const addCartItem = (menu) => {
+    if (cartItems.length !== 0) {
+      console.log("NOT ZERO");
+      setCartItems(
+        (prevState) => {
+          const array = [...prevState.filter((item) => item.id !== menu.id)];
+  
+          return array;
+        }
+      );
+      return;
+    }
     addCartCounter();
     setCartItems((prevState) => [menu, ...prevState]);
   }
@@ -42,6 +53,7 @@ const App = () => {
           items={cartItems}
           setModal={setModalOpen}
           deleteItem={deleteCartItem}
+          setCartItems={setCartItems}
         />
       }
       </AnimatePresence>

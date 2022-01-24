@@ -6,20 +6,19 @@ import Backdrop from "./Backdrop";
 import Styles from "./Styles/CartModal.module.css";
 import CartTable from "./CartTable";
 
-const CartModal = ({setModal, items, deleteItem}) => {
+const CartModal = ({setModal, items, deleteItem, setCartItems}) => {
 
   const componentRef = useRef();
   const printHandler = useReactToPrint({content: () => componentRef.current})
-  const [cartItems, setCartItems] = useState([...items]);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(
     () => {
       let amount = 0;
 
-      cartItems.forEach((element) => amount += element.total);
+      items.forEach((element) => amount += element.total);
       setTotalPrice(amount);
-    }, [totalPrice, cartItems]
+    }, [totalPrice, items]
   );
 
   const validateNumber = (value) => {
@@ -46,7 +45,7 @@ const CartModal = ({setModal, items, deleteItem}) => {
       );
     }
     else if (op === "sub") {
-      if (!validateNumber(cartItems[idx]['quantity'] - 2)) return;
+      if (!validateNumber(items[idx]['quantity'] - 2)) return;
 
       setCartItems(
         (prevState) => {
@@ -70,7 +69,7 @@ const CartModal = ({setModal, items, deleteItem}) => {
   }
 
   const deleteHandler = (id) => {
-    setCartItems([...cartItems.filter((value) => value.id !== id)]);
+    setCartItems([...items.filter((value) => value.id !== id)]);
     deleteItem(id);
   }
 
@@ -84,7 +83,7 @@ const CartModal = ({setModal, items, deleteItem}) => {
             initial={{y: "-100vh"}} animate={{y: 0}} exit={{y: "100vh"}}
             transition={{type: "just", damping: 15}}>
             <CartTable ref={componentRef}
-              cartItems={cartItems}
+              cartItems={items}
               changeQtyHandler={changeQtyHandler}
               deleteHandler={deleteHandler}
               printHandler={printHandler}
