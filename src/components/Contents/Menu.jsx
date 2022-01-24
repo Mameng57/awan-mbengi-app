@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import CategoryMenu from "../UI/CategoryMenu";
 import MenuItem from "../UI/MenuItem";
 import Styles from "./Styles/Menu.module.css";
@@ -55,7 +56,12 @@ const Menu = ({menus, addItem}) => {
           <div className={`${Styles.arrow} ${Styles.right}`} />
         </div>
       </div>
-      <Toast menu={toastMenu} isVisible={showToast} toggleToast={setShowToast} />
+      {
+        ReactDOM.createPortal(
+          <Toast menu={toastMenu} isVisible={showToast} toggleToast={setShowToast} />,
+          document.getElementById('toast')
+        )
+      }
     </div>
   );
 }
