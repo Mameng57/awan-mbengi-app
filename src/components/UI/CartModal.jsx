@@ -6,7 +6,7 @@ import Backdrop from "./Backdrop";
 import Styles from "./Styles/CartModal.module.css";
 import CartTable from "./CartTable";
 
-const CartModal = ({setModal, items, subCounter, deleteItem}) => {
+const CartModal = ({setModal, items, deleteItem}) => {
 
   const componentRef = useRef();
   const printHandler = useReactToPrint({content: () => componentRef.current})
@@ -72,7 +72,6 @@ const CartModal = ({setModal, items, subCounter, deleteItem}) => {
   const deleteHandler = (id) => {
     setCartItems([...cartItems.filter((value) => value.id !== id)]);
     deleteItem(id);
-    subCounter();
   }
 
   return (

@@ -19,17 +19,19 @@ const App = () => {
   const subCartCounter = () => setCartCounter((prevState) => prevState -= 1);
 
   const addCartItem = (menu) => {
-    setCartItems((prevState) => [...prevState, menu]);
+    addCartCounter();
+    setCartItems((prevState) => [menu, ...prevState]);
   }
 
   const deleteCartItem = (id) => {
+    subCartCounter();
     setCartItems([...cartItems.filter((value) => value.id !== id)]);
   }
 
   const routes = [
     {path: "/", element: <HomePage specials={Foods.specials} />},
     {path: "/about", element: <AboutPage />},
-    {path: "/order", element: <OrderPage menus={Foods.menus} addItem={addCartItem} addCounter={addCartCounter} />},
+    {path: "/order", element: <OrderPage menus={Foods.menus} addItem={addCartItem} />},
   ];
 
   return (
@@ -39,7 +41,6 @@ const App = () => {
         <CartModal
           items={cartItems}
           setModal={setModalOpen}
-          subCounter={subCartCounter}
           deleteItem={deleteCartItem}
         />
       }

@@ -4,7 +4,7 @@ import MenuItem from "../UI/MenuItem";
 import Styles from "./Styles/Menu.module.css";
 import Toast from "../UI/Toast";
 
-const Menu = ({menus, addCounter, addItem}) => {
+const Menu = ({menus, addItem}) => {
 
   const [showToast, setShowToast] = useState(false);
   const [toastMenu, setToastMenu] = useState({});
@@ -18,7 +18,6 @@ const Menu = ({menus, addCounter, addItem}) => {
     setShowToast(true);
     setToastMenu(menu);
     addItem(addedMenu);
-    addCounter();
   }
 
   const [filteredMenus, setFilteredMenus] = useState([

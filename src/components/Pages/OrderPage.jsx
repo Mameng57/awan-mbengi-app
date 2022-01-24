@@ -3,12 +3,12 @@ import Menu from "../Contents/Menu";
 import HeaderCover from "../UI/HeaderCover";
 import Transition from "../UI/Transition";
 
-const OrderMenu = ({menus, addCounter, addItem}) => {
+const OrderMenu = ({menus, addItem}) => {
 
   return (
     <Transition>
       <HeaderCover image="b" />
-      <Menu menus={menus} addCounter={addCounter} addItem={addItem} />
+      <Menu menus={menus} addItem={addItem} />
     </Transition>
   );
 }
