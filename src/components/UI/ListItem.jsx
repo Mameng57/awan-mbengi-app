@@ -24,8 +24,7 @@ const ListItem = ({item, idx, changeQty, deleteHandler}) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4" />
         </svg>
         <div className={Styles.input}>
-          <input type="number" min="1" value={item.quantity} onChange={(event) => changeQty("", idx, event)}
-          />
+          <input type="text" pattern="\d*" maxLength="2" value={item.quantity} onChange={(event) => changeQty("", idx, event)} />
         </div>
         <svg xmlns="http://www.w3.org/2000/svg"
           className={Styles.button}

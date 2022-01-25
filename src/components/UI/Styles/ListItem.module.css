@@ -69,19 +69,12 @@
 input {
   width: 100%;
   height: 100%;
-  border: none;
   text-align: center;
+  border: burlywood 1px solid;
 }
 
 input:focus {
-  border: burlywood 1px solid;
   outline: none;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0;
 }
 
 .total {
@@ -115,5 +108,9 @@ input[type=number]::-webkit-outer-spin-button {
 @media print {
   .button, .delete {
     display: none;
+  }
+
+  input {
+    border: none;
   }
 }
