@@ -61,7 +61,7 @@ const App = () => {
         />
       }
       </AnimatePresence>
-      <NavBar cartCounter={cartCounter} currentLocation={location} setModal={setModalOpen} />
+      <NavBar cartCounter={cartCounter} setModal={setModalOpen} />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}> {
           routes.map(
