@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Styles from "./Styles/Toast.module.css";
+import { ReactComponent as IconWarning } from "../../assets/icons/Warning.svg";
 
 const Toast = (props) => {
 
@@ -28,15 +29,7 @@ const Toast = (props) => {
         transition={{duration: 1.2, type:"spring", stiffness: 500, damping: 20}}>
         <div className={Styles.toast__inner}>
           <div className={Styles.pillar} />
-          <svg xmlns="http://www.w3.org/2000/svg"
-            className={Styles.icon} fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
+          <IconWarning className={Styles.icon} />
           <div className={Styles.text}>
             <h2>{props.menu.name}</h2>
             <p>
