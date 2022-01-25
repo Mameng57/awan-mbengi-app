@@ -26,13 +26,19 @@ const About = () => {
         </div>
         <div className={Styles.footer}>
           <div className={Styles.footer__left}>
-            <a href="https://www.facebook.com/pages/Waroeng-Kopi-Shisha-Awan-Mbengi/168423899870365">
-              <img src={facebook} alt="Facebook"/>
-            </a>
-            <a href="https://www.instagram.com/awanmbengijogja/">
-              <img src={instagram} alt="Instagram"/>
-            </a>
-           <img src={twitter} alt="Twitter"/>
+            <div className={Styles['image-box']}>
+              <a href="https://www.facebook.com/pages/Waroeng-Kopi-Shisha-Awan-Mbengi/168423899870365">
+                <img src={facebook} alt="Facebook"/>
+              </a>
+            </div>
+            <div className={Styles['image-box']}>
+              <a href="https://www.instagram.com/awanmbengijogja/">
+                <img src={instagram} alt="Instagram"/>
+              </a>
+            </div>
+            <div className={Styles['image-box']}>
+              <img src={twitter} alt="Twitter"/>
+            </div>
           </div>
           <div className={Styles.footer__right} />
         </div>
