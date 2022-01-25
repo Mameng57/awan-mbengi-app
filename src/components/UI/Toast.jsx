@@ -10,7 +10,7 @@ const Toast = (props) => {
       const timeId = setTimeout(
         () => {
           props.toggleToast(false);
-        }, 2000
+        }, 1500
       );
 
       return () => clearTimeout(timeId);
