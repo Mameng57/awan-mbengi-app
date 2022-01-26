@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Styles from "./Styles/NavBar.module.css";
 import { ReactComponent as IconCart } from "../../assets/icons/Cart.svg";
 import { ReactComponent as IconUser } from "../../assets/icons/User.svg";
+import { ReactComponent as IconUserFill } from "../../assets/icons/User-Fill.svg";
 
 const NavBar = ({cartCounter, setModal}) => {
+
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
     <div className={Styles.navbar}>
@@ -16,17 +19,33 @@ const NavBar = ({cartCounter, setModal}) => {
         </Link>
       </div>
       <div className={Styles['main-end']}>
-        <Link to="/order" style={{textDecoration: "none"}}>
-          <span>Order and Menu</span>
-        </Link>
         <Link to="/about" style={{textDecoration: "none"}}>
           <span>About</span>
+        </Link>
+        <Link to="/order" style={{textDecoration: "none"}}>
+          <span>Order and Menu</span>
         </Link>
         <div className={Styles.cart} orders={cartCounter !== 0 ? cartCounter : ""} onClick={() => setModal(true)}>
           <IconCart />
         </div>
-        <div className={Styles.user}>
-          <IconUser />
+        <div>
+          { openDropdown
+            ? <IconUserFill className={Styles.user} onClick={() => setOpenDropdown((prevState) => !prevState)} />
+            : <IconUser className={Styles.user} onClick={() => setOpenDropdown((prevState) => !prevState)} />
+          }
+          { openDropdown &&
+            <div className={Styles.dropdown}>
+              <div className={Styles.dropdown__element}>
+                LOGIN
+              </div>
+              <div className={Styles.dropdown__element}>
+                DAFTAR
+              </div>
+              <div className={Styles.dropdown__footer}>
+                Selamat Pagi ...
+              </div>
+            </div>
+          }
         </div>
       </div>
     </div>
