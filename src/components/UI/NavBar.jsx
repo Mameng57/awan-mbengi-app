@@ -30,8 +30,14 @@ const NavBar = ({cartCounter, setModal}) => {
         </div>
         <div>
           { openDropdown
-            ? <IconUserFill className={Styles.user} onClick={() => setOpenDropdown((prevState) => !prevState)} />
-            : <IconUser className={Styles.user} onClick={() => setOpenDropdown((prevState) => !prevState)} />
+            ? <IconUserFill
+                className={Styles.user}
+                onClick={() => setOpenDropdown((prevState) => !prevState)}>
+              </IconUserFill>
+            : <IconUser
+                className={Styles.user}
+                onClick={() => setOpenDropdown((prevState) => !prevState)}>
+              </IconUser>
           }
           { openDropdown &&
             <div className={Styles.dropdown}>
