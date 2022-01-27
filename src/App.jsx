@@ -6,15 +6,12 @@ import HomePage from "./components/Pages/HomePage";
 import OrderPage from "./components/Pages/OrderPage";
 import NavBar from "./components/UI/NavBar";
 import Foods from "./components/Models/Foods";
-import CartModal from "./components/UI/CartModal";
 
 const App = () => {
 
   const location = useLocation();
   const [cartCounter, setCartCounter] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
-
   const addCartCounter = () => setCartCounter((prevState) => prevState += 1);
   const subCartCounter = () => setCartCounter((prevState) => prevState -= 1);
 
@@ -51,17 +48,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <AnimatePresence exitBeforeEnter> {
-        modalOpen &&
-        <CartModal
-          items={cartItems}
-          setModal={setModalOpen}
-          deleteItem={deleteCartItem}
-          setCartItems={setCartItems}
-        />
-      }
-      </AnimatePresence>
-      <NavBar cartCounter={cartCounter} setModal={setModalOpen} />
+      <NavBar cartCounter={cartCounter} items={cartItems} deleteItem={deleteCartItem} setCart={setCartItems} />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}> {
           routes.map(
