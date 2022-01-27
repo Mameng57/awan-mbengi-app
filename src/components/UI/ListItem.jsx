@@ -22,7 +22,13 @@ const ListItem = ({item, idx, changeQty, deleteHandler}) => {
       <div className={Styles.header__column}>
         <IconMinus className={Styles.button} onClick={() => changeQty("sub", idx)}></IconMinus>
         <div className={Styles.input}>
-          <input type="text" pattern="\d*" maxLength="2" value={item.quantity} onChange={(event) => changeQty("", idx, event)} />
+          <input
+            type="text"
+            pattern="\d*"
+            maxLength="2"
+            value={item.quantity}
+            onChange={(event) => changeQty("", idx, event)}
+          />
         </div>
         <IconPlus className={Styles.button} onClick={() => changeQty("add", idx)}></IconPlus>
       </div>
