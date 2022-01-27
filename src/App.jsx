@@ -12,8 +12,6 @@ const App = () => {
   const location = useLocation();
   const [cartCounter, setCartCounter] = useState(0);
   const [cartItems, setCartItems] = useState([]);
-  const addCartCounter = () => setCartCounter((prevState) => prevState += 1);
-  const subCartCounter = () => setCartCounter((prevState) => prevState -= 1);
 
   const addCartItem = (menu) => {
     setCartItems(
@@ -29,14 +27,14 @@ const App = () => {
             return [menu, ...prevState.filter((value) => value.id !== menu.id)];
           }
         }
-        addCartCounter();
+        setCartCounter((prevState) => prevState += 1);
         return [menu, ...prevState];
       }
     );
   }
 
   const deleteCartItem = (id) => {
-    subCartCounter();
+    setCartCounter((prevState) => prevState -= 1);
     setCartItems([...cartItems.filter((value) => value.id !== id)]);
   }
 
