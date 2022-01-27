@@ -2,13 +2,15 @@ import React from "react";
 import About from "../Contents/About";
 import Transition from "../UI/Transition";
 
-const AboutPage = () => {
+const AboutPage = React.memo(
 
-  return (
-    <Transition>
-      <About />
-    </Transition>
-  );
-}
+  () => {
+    return (
+      <Transition>
+        <About />
+      </Transition>
+    );
+  }
+);
 
 export default AboutPage;
