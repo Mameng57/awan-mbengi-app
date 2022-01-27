@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <NavBar cartCounter={cartCounter} items={cartItems} deleteItem={deleteCartItem} setCart={setCartItems} />
+      <NavBar cartCounter={cartCounter} items={cartItems} deleteItem={deleteCartItem} setItem={setCartItems} />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}> {
           routes.map(

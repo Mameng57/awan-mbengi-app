@@ -6,7 +6,7 @@ import Backdrop from "./Backdrop";
 import Styles from "./Styles/CartModal.module.css";
 import CartTable from "./CartTable";
 
-const CartModal = ({setModal, items, deleteItem, setCart}) => {
+const CartModal = ({setModal, items, deleteItem, setItem}) => {
 
   const componentRef = useRef();
   const printHandler = useReactToPrint({content: () => componentRef.current})
@@ -27,7 +27,7 @@ const CartModal = ({setModal, items, deleteItem, setCart}) => {
   }
 
   const updatePrice = (idx) => {
-    setCart(
+    setItem(
       (prevState) => {
         prevState[idx]['total'] = prevState[idx]['price'] * prevState[idx]['quantity'];
         return [...prevState];
@@ -37,7 +37,7 @@ const CartModal = ({setModal, items, deleteItem, setCart}) => {
 
   const changeQtyHandler = (op, idx, event) => {
     if (op === "add") {
-      setCart(
+      setItem(
         (prevState) => {
           prevState[idx]['quantity'] += 1;
           return [...prevState];
@@ -47,7 +47,7 @@ const CartModal = ({setModal, items, deleteItem, setCart}) => {
     else if (op === "sub") {
       if (!validateNumber(items[idx]['quantity'] - 2)) return;
 
-      setCart(
+      setItem(
         (prevState) => {
           prevState[idx]['quantity'] -= 1;
           return [...prevState];
@@ -58,7 +58,7 @@ const CartModal = ({setModal, items, deleteItem, setCart}) => {
       if (!event.target.value) return;
       if (!validateNumber(event.target.value)) return;
 
-      setCart(
+      setItem(
         (prevState) => {
           prevState[idx]['quantity'] = parseInt(event.target.value);
           return [...prevState];
@@ -69,7 +69,7 @@ const CartModal = ({setModal, items, deleteItem, setCart}) => {
   }
 
   const deleteHandler = (id) => {
-    setCart([...items.filter((value) => value.id !== id)]);
+    setItem([...items.filter((value) => value.id !== id)]);
     deleteItem(id);
   }
 

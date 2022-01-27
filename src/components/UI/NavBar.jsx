@@ -19,8 +19,8 @@ const NavBar = (props) => {
         <CartModal
           items={props.items}
           setModal={setModalOpen}
-          deleteItem={props.deleteCartItem}
-          setCart={props.setCart}
+          deleteItem={props.deleteItem}
+          setItem={props.setItem}
         />
       }
       </AnimatePresence>
