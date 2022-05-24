@@ -39,3 +39,9 @@
 .text p {
   margin: 0;
 }
+
+@media only screen and (min-width: 768px) {
+  .text {
+    width: 60%;
+  }
+}

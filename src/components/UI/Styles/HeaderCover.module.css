@@ -36,3 +36,13 @@
   text-shadow: 0px 0px 20px black;
   font-family: 'Waterfall', cursive;
 }
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    width: 25%;
+  }
+
+  .text {
+    width: 45%;
+  }
+}
